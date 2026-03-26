@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("/assets/fonts/PlusJakartaSans.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* Dark premium theme always-on */
+    --background: 0.09 0 0;
+    --foreground: 0.94 0 0;
+    --card: 0.14 0 0;
+    --card-foreground: 0.94 0 0;
+    --popover: 0.16 0 0;
+    --popover-foreground: 0.94 0 0;
+    --primary: 0.72 0.1 78;
+    --primary-foreground: 0.1 0 0;
+    --secondary: 0.19 0 0;
+    --secondary-foreground: 0.94 0 0;
+    --muted: 0.19 0 0;
+    --muted-foreground: 0.55 0 0;
+    --accent: 0.72 0.1 78;
+    --accent-foreground: 0.1 0 0;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.25 0 0;
+    --input: 0.16 0 0;
+    --ring: 0.72 0.1 78;
+    --chart-1: 0.72 0.1 78;
+    --chart-2: 0.6 0.118 184;
+    --chart-3: 0.398 0.07 227;
+    --chart-4: 0.828 0.189 84;
+    --chart-5: 0.769 0.188 70;
+    --sidebar: 0.12 0 0;
+    --sidebar-foreground: 0.94 0 0;
+    --sidebar-primary: 0.72 0.1 78;
+    --sidebar-primary-foreground: 0.1 0 0;
+    --sidebar-accent: 0.18 0 0;
+    --sidebar-accent-foreground: 0.94 0 0;
+    --sidebar-border: 0.22 0 0;
+    --sidebar-ring: 0.72 0.1 78;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: oklch(var(--background));
+  }
+  ::-webkit-scrollbar-thumb {
+    background: oklch(var(--border));
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: oklch(0.35 0 0);
+  }
+}
